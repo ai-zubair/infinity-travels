@@ -1,0 +1,57 @@
+/*---------------------------------------------BODY---------------------------------------------*/
+body{
+    background: url("../resources/pattern.png");
+}
+div{
+    &#wrapper{
+        background-color:white; 
+        max-width: 80rem;
+        margin: 1.5rem auto;
+        box-shadow: 0px 0px 8px  black;
+    }
+}
+
+/*---------------------------------------------NAVIGATION---------------------------------------------*/
+
+nav {
+    ul {
+        margin-left: $gutter;
+        border-left: 1px solid rgba(0, 0, 0, 0.3);
+        li {
+            width: auto;
+            &:last-child {
+                border-right: 1px solid rgba(0, 0, 0, 0.3);
+            }
+            a {
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}
+
+/*---------------------------------------------MAIN---------------------------------------------*/
+
+main {
+    figure.photo {
+        width: 25%-$gutterdbl;
+        float: left;
+        img {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.03);
+            }
+        }
+    }
+    div.blog {
+        article {
+            width: 33.33%-$gutterdbl;
+            float: left;
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+            &:nth-child(3n+1) {
+                clear: left;
+            }
+        }
+    }
+} //end of main

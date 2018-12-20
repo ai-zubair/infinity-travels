@@ -1,0 +1,178 @@
+/*Prevents the font size adjustments in the WP and IP as the device oeientation changes*/
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*Resets all the elements to follow the same box model*/
+
+* {
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------BODY----------------------------------------------*/
+
+body {
+    font-family: $default-font;
+    font-weight: $normal-weight;
+    font-size: 16px;
+}
+
+/*--------------------------------------------HEADER----------------------------------------------*/
+
+header {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 1rem $gutter;
+    h1 {
+        font-size: 2rem;
+        font-weight: $normal-weight;
+    }
+    h2 {
+        font-size: 1.06rem;
+        font-weight: $normal-weight;
+    }
+} //end of header
+/*--------------------------------------------NAVIGATION----------------------------------------------*/
+
+nav {
+    position: sticky;
+    top: 0%;
+    background-color: $secondary-color;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    ul {
+        li {
+            float: left;
+            width: 16.66%;
+            border-right: 1px solid rgba(0, 0, 0, 0.3);
+            &:last-child {
+                border-right: none;
+            }
+            &.active {
+                a {
+                    background-color: darken($secondary-color, 10%);
+                }
+            }
+            a {
+                display: block;
+                text-align: center;
+                font-weight: $bold-weight;
+                padding: 0.5rem 0;
+                color: $primary-color;
+                text-decoration: none;
+                transition: color 0.5s ease, background-color 0.5s ease;
+                &:hover {
+                    color: $secondary-color;
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+} //end of nav
+/*--------------------------------------------MAIN----------------------------------------------*/
+
+main {
+    figure.banner {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    h1 {
+        font-size: 2rem;
+        margin: 1rem 0 0 $gutter;
+    } //end of h1
+    h2 {
+        margin: 0.75rem 0 0 $gutter;
+        font-size: 1.5rem;
+        color: lighten($primary-color, 10%);
+    } //end of h2
+    h3 {
+        font-size: 1.2rem;
+        color: lighten($primary-color, 20%);
+    } //end of h3
+    p {
+        line-height: 130%;
+        color: $font-color;
+    } //end of p
+    hr {
+        margin: 0 $gutter;
+        border: none;
+        height: 2px;
+        width: 100%-$gutterdbl;
+        &.fade-away {
+            background: linear-gradient(to right, rgba(0, 132, 255, 1) 0%, rgba(125, 185, 232, 0) 100%);
+        }
+    }
+    figure.photo {
+        width: 100%-$gutterdbl;
+        margin: 0.5rem $gutter;
+        img {
+            box-shadow: 0px 0px 18px 0px #444444;
+            width: 100%;
+            transition: transform 0.5s ease;
+            border-radius: 5px;
+        }
+        figcaption {
+            text-align: center;
+            color: $primary-color;
+        }
+    }
+    div.pop {
+        background-color: $accent;
+        text-align: center;
+        clear: both;
+        padding: 1rem 0;
+        width:100%;
+        .title {
+            width:100%;
+            font-size: 2.5rem;
+            color:white;
+            font-weight: $bold-weight;
+        }
+        .copy {
+            width:100%;
+            color: #fff;
+            padding: .5rem 0;
+            font-size:1.5rem;
+            font-weight: $bold-weight;
+        }
+        .copy span {
+            font-size: 3rem;
+            color: $primary-color;
+            font-weight: $bold-weight;
+        } // end span
+    }
+    div.blog {
+        article {
+            margin: 0.5rem $gutter;
+            width: 100%-$gutterdbl;
+            p {
+                text-align: justify;
+            }
+        }
+    }
+} //end of main
+/*--------------------------------------------FOOTER----------------------------------------------*/
+
+footer {
+    width: 100%;
+    background-color: $primary-color;
+    p {
+        color: $secondary-color;
+        text-align: center;
+        padding: 0.75rem 0;
+        font-size: 0.9rem;
+        a {
+            color: $secondary-color;
+        }
+    }
+} //end of footer
+/*------------Clearfix: forces an element not to collapse upon content flow disruption------------*/
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
